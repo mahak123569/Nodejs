@@ -8,13 +8,12 @@ const myServer = http.createServer((req, res) => {
  const log = `${Date.now()}: ${req.url} New Req Received\n`;
     const myUrl = url.parse(req.url, true);
 console.log(myUrl);
-    // Logging (no res.end here!)
+    
    
     fs.appendFile("log.txt", log, (err,data) => {
         
-    
 
-    // Only ONE response
+    //  ONE response
     switch (myUrl.pathname) {
         case "/":
            break;
